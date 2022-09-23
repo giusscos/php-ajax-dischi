@@ -15,6 +15,11 @@
     <?php
     include __DIR__ . '/../db/dischi.php';
     ?>
+    <header class="main_header">
+        <div class="logo_wrapper">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpnggrid.com%2Fwp-content%2Fuploads%2F2021%2F05%2FSpotify-PNG-Logo-1536x1534.png&f=1&nofb=1" alt="logo_spotify">
+        </div>
+    </header>
     <main class="main_content">
         <div class="container">
             <ul class="cards_list">
