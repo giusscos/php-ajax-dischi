@@ -5,34 +5,32 @@ const app = new Vue({
         genres: [],
         selectedGenre: '',
     },
-    computed:{
-        getGenre(){
-            for(let i=0; i < this.dischi.length; i++){
-                if(!this.genres.includes(this.dischi[i].genre)){
-                    console.log(i)
+    computed: {
+        getGenre() {
+            for (let i = 0; i < this.dischi.length; i++) {
+                if (!this.genres.includes(this.dischi[i].genre)) {
                     this.genres.push(this.dischi[i].genre)
                 }
             }
             return this.genres
-        },
-        filterByGenre(){
-            return this.dischi.filter((el) => {
-                const genre = el.genre
-
-                if(genre === this.selectedGenre){
-                    return true
-                }
-
-                return false
-            })
+        }
+    },
+    methods: {
+        fetchDischi() {
+            axios
+                .get('http://localhost:8888/php-ajax-dischi/bonus/api/dischi.php', {
+                    params: {
+                        genre: this.selectedGenre
+                    }
+                })
+                .then((res) => {
+                    const { response } = res.data
+                    console.log(response)
+                    this.dischi = response
+                })
         }
     },
     created() {
-        axios
-            .get('http://localhost:8888/php-ajax-dischi/seconda-versione/api/dischi.php')
-            .then((res) => {
-                const { response } = res.data
-                this.dischi = response
-            })
+        this.fetchDischi()
     },
 })

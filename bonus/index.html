@@ -19,17 +19,15 @@
             <div class="logo_wrapper">
                 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpnggrid.com%2Fwp-content%2Fuploads%2F2021%2F05%2FSpotify-PNG-Logo-1536x1534.png&f=1&nofb=1" alt="logo_spotify">
             </div>
-            <select class="select genre" v-model="selectedGenre">
+            <select class="select genre" @change="fetchDischi" v-model="selectedGenre">
                 <option disabled value="">-- Please select one genre --</option>
-                <option v-for="genre in getGenre">
-                    {{genre}}
-                </option>
+                <option v-for="genre in getGenre" :value="genre">{{genre}}</option>
             </select>
         </header>
         <main class="main_content">
             <div class="container">
-                <ul class="cards_list" v-if="filterByGenre.length">
-                    <li class="list_item" v-for="disco in filterByGenre">
+                <ul class="cards_list" v-if="dischi.length">
+                    <li class="list_item" v-for="disco in dischi">
                         <div class="card_wrapper">
                             <div class="img_wrapper">
                                 <img :src="disco.poster" :alt="disco.title">
