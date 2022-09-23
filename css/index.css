@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    color: #ddd;
+    background-color: #1e2d3b;
+}
+
+/* Default Rules */
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Layout */
+.container {
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    max-width: 1000px;
+}
+
+/* Main */
+.main_content .cards_list {
+    padding: 1rem 0;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+/* Card */
+.cards_list>.list_item {
+    padding: 1.5rem;
+    background-color: #2e3a46;
+
+    text-align: center;
+}
+
+.card_wrapper .img_wrapper img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.card_wrapper h3 {
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.card_wrapper p {
+    padding: 0.25rem;
+    opacity: 0.6;
+}
