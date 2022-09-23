@@ -7,7 +7,8 @@
 
 :root{
     --ds-text_white: #ddd;
-    --ds-bg: #1e2d3b;
+    --ds-bg: #2e3a46;
+    --ds-bg-darker: #1e2d3b;
 }
 
 html {
@@ -16,7 +17,7 @@ html {
 
 body{
     color: var(--ds-text_white);
-    background-color: var(--ds-bg);
+    background-color: var(--ds-bg-darker);
 }
 
 /* Default Rules */
@@ -35,6 +36,21 @@ img {
     max-width: 1000px;
 }
 
+/* Header */
+.main_header{
+    padding: 0.5rem 1rem;
+    background-color: var(--ds-bg);
+}
+
+.logo_wrapper{
+    width: 50px;
+    aspect-ratio: 1/1;
+}
+.logo_wrapper > img{
+    object-fit: cover;
+    object-position: center;
+}
+
 /* Main */
 .main_content .cards_list {
     padding: 1rem 0;
@@ -46,7 +62,7 @@ img {
 /* Card */
 .cards_list>.list_item {
     padding: 1.5rem;
-    background-color: #2e3a46;
+    background-color: var(--ds-bg);
 
     text-align: center;
 }
