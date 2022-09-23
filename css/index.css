@@ -40,6 +40,8 @@ img {
 .main_header{
     padding: 0.5rem 1rem;
     background-color: var(--ds-bg);
+
+    display: flex;
 }
 
 .logo_wrapper{
@@ -51,6 +53,17 @@ img {
     object-position: center;
 }
 
+.select.genre{
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--ds-text_white);
+
+    margin-left: auto;
+    padding: 0 0.25rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    border: 2px solid var(--ds-text_white);
+}
 /* Main */
 .main_content .cards_list {
     padding: 1rem 0;

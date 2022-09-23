@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>
+        Php Dischi
+    </title>
+</head>
+
+<body>
+    <div id="app">
+        <header class="main_header">
+            <div class="logo_wrapper">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpnggrid.com%2Fwp-content%2Fuploads%2F2021%2F05%2FSpotify-PNG-Logo-1536x1534.png&f=1&nofb=1" alt="logo_spotify">
+            </div>
+            <select class="select genre" v-model="selectedGenre">
+                <option disabled value="">-- Please select one genre --</option>
+                <option v-for="genre in getGenre">
+                    {{genre}}
+                </option>
+            </select>
+        </header>
+        <main class="main_content">
+            <div class="container">
+                <ul class="cards_list" v-if="filterByGenre.length">
+                    <li class="list_item" v-for="disco in filterByGenre">
+                        <div class="card_wrapper">
+                            <div class="img_wrapper">
+                                <img :src="disco.poster" :alt="disco.title">
+                            </div>
+                            <h3>
+                                {{ disco.title }}
+                            </h3>
+                            <p>
+                                {{ disco.author }}
+                            </p>
+                            <p>
+                                {{ disco.year }}
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <p v-else>
+                    Nessun Disco
+                </p>
+            </div>
+        </main>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
