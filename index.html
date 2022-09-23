@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>
+        Php Dischi
+    </title>
+</head>
+
+<body>
+    <div id="app">
+        <main class="main_content">
+            <div class="container">
+                <ul class="cards_list" v-if="dischi.length">
+                    <li class="list_item" v-for="disco in dischi">
+                        <div class="card_wrapper">
+                            <div class="img_wrapper">
+                                <img :src="disco.poster" :alt="disco.title">
+                            </div>
+                            <h3>
+                                {{ disco.title }}
+                            </h3>
+                            <p>
+                                {{ disco.author }}
+                            </p>
+                            <p>
+                                {{ disco.year }}
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <p v-else>
+                    Nessun Disco
+                </p>
+            </div>
+        </main>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
